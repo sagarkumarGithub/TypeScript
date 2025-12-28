@@ -52,4 +52,47 @@ let unknownValue: unknown = myFunction();
 let valueInString: string = unknownValue as string;
 console.log("Value in String:", valueInString);  
 
+// Types of functions
+//-------------------
+
+let multiply: (x: number, y: number) => number;
+
+let user : {
+    firstName: string;
+    lastName: string;
+    getFullName: () => string;
+}
+
+user = {
+    firstName: "John",
+    lastName: "Doe",
+    getFullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+}
+
+// Optional Parameter
+function buildName(firstName: string, lastName?: string) : string {
+    if (lastName) {
+        return firstName + " " + lastName;
+    } else {
+        return firstName;
+    }
+}
+
+// Default Parameter
+function buildNameWithDefault(firstName: string, lastName: string = "Doe") : string {
+    return firstName + " " + lastName;
+}
+
+// Rest Parameter
+function sumAtleastTwo(firstNum: number, secondNum: number, ...restNums: number[]) : number {
+    let total = firstNum + secondNum;
+    for (let num of restNums) {
+        total += num;
+    }
+    return total;
+}
+
+
 

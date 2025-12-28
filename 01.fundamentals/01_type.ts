@@ -64,6 +64,37 @@ let rgba: [number, number, number, number] = [255, 0, 0, 1];
 // optional tuple elements
 let rgb: [number, number, number, number?] = [255, 0, 0];
 
+// Enum
+//------
+
+enum Days {
+    Sunday,
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday
+}
+
+console.log(Days.Monday); // 1
+
+enum orderStatus {
+    PENDING = "pending",
+    SHIPPED = "shipped",
+    DELIVERED = "delivered"
+}
+
+console.log(orderStatus.DELIVERED); // "delivered"
+
+// Literal Types
+//---------------
+
+let direction: "up" | "down" | "left" | "right";
+
+direction = "up"; // valid
+// direction = "forward"; // invalid
+
 
 
 
